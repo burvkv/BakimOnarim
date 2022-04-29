@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bakimonarim.webui", "BuskiBakim\bakimonarim.webui.csproj", "{5FBF3553-CAE4-42D2-98F1-E899B40C2123}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bakimonarim.webui", "BuskiBakim\bakimonarim.webui.csproj", "{5FBF3553-CAE4-42D2-98F1-E899B40C2123}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bakimonarim.dataaccess", "bakimonarim.dataaccess\bakimonarim.dataaccess.csproj", "{D3EB69B8-37CE-467B-BB65-3F3A3753D1C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bakimonarim.dataaccess", "bakimonarim.dataaccess\bakimonarim.dataaccess.csproj", "{D3EB69B8-37CE-467B-BB65-3F3A3753D1C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bakimonarim.entity", "bakimonarim.entity\bakimonarim.entity.csproj", "{0BF5AEA2-F8CC-420B-8FA4-116F814446E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bakimonarim.entity", "bakimonarim.entity\bakimonarim.entity.csproj", "{0BF5AEA2-F8CC-420B-8FA4-116F814446E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bakimonarim.business", "bakimonarim.business\bakimonarim.business.csproj", "{0843571B-692F-40DC-B74F-FBE5C01833F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bakimonarim.business", "bakimonarim.business\bakimonarim.business.csproj", "{0843571B-692F-40DC-B74F-FBE5C01833F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bakimonarim.core", "bakimonarim.core\bakimonarim.core.csproj", "{5804FF28-2730-4E4A-A952-A6FF5DD98B1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bakimonarim.core", "bakimonarim.core\bakimonarim.core.csproj", "{5804FF28-2730-4E4A-A952-A6FF5DD98B1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bakimonarim.consoleui", "bakimonarim.consoleui\bakimonarim.consoleui.csproj", "{3D935447-10DA-441D-ABDC-72666723DC3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{5804FF28-2730-4E4A-A952-A6FF5DD98B1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5804FF28-2730-4E4A-A952-A6FF5DD98B1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5804FF28-2730-4E4A-A952-A6FF5DD98B1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D935447-10DA-441D-ABDC-72666723DC3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D935447-10DA-441D-ABDC-72666723DC3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D935447-10DA-441D-ABDC-72666723DC3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D935447-10DA-441D-ABDC-72666723DC3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

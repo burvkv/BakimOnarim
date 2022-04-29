@@ -13,11 +13,20 @@ namespace bakimonarim.dataaccess.Concrete
         public DbSet<Varlik> TBL_Varlik { get; set; }
         public DbSet<VGrup> TBL_VGrup { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+
+        public BakimOnarimDbContext(DbContextOptions<BakimOnarimDbContext> options)
+            : base(options)
         {
-            optionsBuilder.UseMySQL("server=localhost;database=bakimonarimdb;user=root;password=root;convert zero datetime=True");
+        }
+        public BakimOnarimDbContext()
+        {
+
         }
 
-       
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseMySQL("Server=localhost;Port=3306;Database=bakimonarimdb;Uid=root;Pwd=root;");
+        //}
+
     }
 }

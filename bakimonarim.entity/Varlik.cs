@@ -1,9 +1,11 @@
 ﻿using bakimonarim.core.Entity;
+using System.ComponentModel.DataAnnotations;
 
 namespace bakimonarim.entity
 {
     public class Varlik : IEntity
     {
+        [Key]
         public int VarlikID { get; set; }
         public string VarlikKodu { get; set; }
         public string VarlikAdi { get; set; }
