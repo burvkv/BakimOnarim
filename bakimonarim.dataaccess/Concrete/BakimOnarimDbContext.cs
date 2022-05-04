@@ -14,14 +14,12 @@ namespace bakimonarim.dataaccess.Concrete
         public DbSet<VGrup> TBL_VGrup { get; set; }
 
 
-        public BakimOnarimDbContext(DbContextOptions<BakimOnarimDbContext> options)
-            : base(options)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-        }
-        public BakimOnarimDbContext()
-        {
+            optionsBuilder.UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=bakimonarimdb;Trusted_Connection=True;");
 
         }
+
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{

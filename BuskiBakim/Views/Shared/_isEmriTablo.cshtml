@@ -1,0 +1,48 @@
+﻿
+@(Html.DevExtreme().DataGrid<bakimonarim.entity.VGrup>()
+    .DataSource(d => d.Mvc()
+        .Controller("VGrup")
+        .LoadAction("GetGroups")
+        .InsertAction("Insert")
+        .UpdateAction("Update")
+        .DeleteAction("Delete")
+        .Key("GrupID")
+    )
+    .RemoteOperations(true)
+    .Columns(columns => {
+        columns.AddFor(m => m.GrupID).AllowEditing(false).AllowFiltering(false);
+
+        columns.AddFor(m => m.AracSinifID);
+
+        columns.AddFor(m => m.GrupMarka);
+
+        columns.AddFor(m => m.GrupModel);
+
+        columns.AddFor(m => m.LastikTip);
+
+    })
+    .FilterRow(f => f.Visible(true))
+    .HeaderFilter(f => f.Visible(true))
+    .GroupPanel(p => p.Visible(true))
+    .Scrolling(s => s.Mode(GridScrollingMode.Virtual))
+    .Height(600)
+    .ShowBorders(true)
+    @*.MasterDetail(md => md
+        .Enabled(true)
+        .Template(@<text>
+
+            @(Html.DevExtreme().DataGrid()
+                .DataSource(d => d.Mvc()
+                    .Controller("VGrup")
+                    .LoadAction("OrderDetails")
+                    .LoadParams(new { vGrupId = new JS("data.VGrupId") })
+                )
+                .ShowBorders(true)
+            )
+
+        </text>)
+    )*@
+    .Editing(e => e.AllowAdding(true).AllowDeleting(true).AllowUpdating(true).UseIcons(true))
+    .Grouping(g => g.AutoExpandAll(false))
+    
+    )

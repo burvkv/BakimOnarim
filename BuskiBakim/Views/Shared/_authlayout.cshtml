@@ -4,30 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - BuskiBakim</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/style.bundle.css"/>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/style.bundle.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/sidebar.css" asp-append-version="true" />
-    <link href="~/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
-    <link href="~/plugins/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 </head>
-<body style="background-color: #e0e0e0; ">
+<body >
             
    @RenderBody()
       
-@*    <script src="~/lib/jquery/dist/jquery.min.js"></script>*@
-    <script src="~/js/scripts.bundle.js"></script>
-    <script src="~/css/style.bundle.js"></script>
-    <script src="~/plugins/plugins.bundle.js"></script>
-   @* <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/scripts.bundle.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="~/js/custom/widgets.js"></script>
-	<script src="~/js/custom/apps/chat/chat.js"></script>
-	<script src="~/js/custom/modals/create-app.js"></script>
-	<script src="~/js/custom/modals/upgrade-plan.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

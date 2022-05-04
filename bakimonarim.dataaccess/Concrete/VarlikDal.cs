@@ -1,4 +1,5 @@
 ﻿using bakimonarim.core.DataAccess.EntityFramework;
+using bakimonarim.dataaccess.Abstract;
 using bakimonarim.entity;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace bakimonarim.dataaccess.Concrete
 {
-    public class VarlikDal : EfEntityRepositoryBase<Varlik, BakimOnarimDbContext>
+    public class VarlikDal : EfEntityRepositoryBase<Varlik, BakimOnarimDbContext>, IVarlikDal
     {
     }
 }

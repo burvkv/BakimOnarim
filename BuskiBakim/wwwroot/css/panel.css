@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800&display=swap');
+.stats{
+    padding-top: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+.stat{
+    height: 150px;
+    width: 100%;
+    min-width: 100%;
+    margin-top: 10px;
+    position: relative;
+}
+.varlikStat{
+    background-color: #F9B113;
+    border: 2px solid #e9ac29;
+}
+.grupStat{
+    background-color: #E55251;
+    border: 2px solid #db4d4d;
+}
+.isemriStat{
+    background-color: #329BFE;
+    border: 2px solid #308ee6;
+}
+.stokStat{
+    background-color: #59CF5D;
+    border: 2px solid #4bbb4f;
+}
+.statinfo{
+    font-size: 18px;
+    font-weight: 600;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 3px;
+    z-index: 1;
+}
+.statsubinfo{
+    position: relative;
+    font-size: 13px;
+    font-weight: 400;
+    padding-left: 15px;
+    padding-bottom: 3px;
+    z-index: 1;
+}
+.varlikinfo{
+    color: #f3f3f3;
+}
+.varliksubinfo{
+    color: #ebebeb;  
+}
+.varliksubinfo i{
+    color: #ebebeb;
+}
+.staticon{
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    z-index: 0;
+}
+.staticon i{
+    font-size: 100px;
+    
+}
+.varlikStat .staticon i{
+    color: #d69302;
+}
+.grupStat .staticon i{
+    color: #c44242
+}
+.isemriStat .staticon i{
+    color: #2c82d3;
+}
+.stokStat .staticon i{
+    color: #48af4b;
+}
+.stats a:hover .staticon i{
+    font-size: 102px;
+    transition: all .1s ease;
+}
+.stats a:hover .statlink{
+    text-decoration: underline;
+}
+.statlink{
+    position: relative;
+    font-size: 11px;
+    font-weight: 400;
+    color: #ebebeb;
+    padding-left: 15px;
+    z-index: 1;
+}

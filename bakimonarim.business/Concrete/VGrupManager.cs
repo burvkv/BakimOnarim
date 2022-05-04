@@ -23,7 +23,7 @@ namespace bakimonarim.business.Concrete
 
         [TransactionScopeAspect]
         [PerformanceAspect(5)]
-        [CacheRemoveAspect("IProjectService.Get")]
+        [CacheRemoveAspect("IVGrupService.Get")]
         [LogAspect(typeof(FileLogger))]
         [ValidationAspect(typeof(VGrupValidator))]
         public IResult Add(VGrup vGrup)
@@ -34,7 +34,7 @@ namespace bakimonarim.business.Concrete
 
         [TransactionScopeAspect]
         [PerformanceAspect(5)]
-        [CacheRemoveAspect("IProjectService.Get")]
+        [CacheRemoveAspect("IVGrupService.Get")]
         [LogAspect(typeof(FileLogger))]
         public IResult Delete(VGrup vGrup)
         {
@@ -67,7 +67,7 @@ namespace bakimonarim.business.Concrete
 
         [TransactionScopeAspect]
         [PerformanceAspect(5)]
-        [CacheRemoveAspect("IProjectService.Get")]
+        [CacheRemoveAspect("IVGrupService.Get")]
         [LogAspect(typeof(FileLogger))]
         [ValidationAspect(typeof(VGrupValidator))]
         public IResult Update(VGrup vGrup)

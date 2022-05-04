@@ -1,0 +1,112 @@
+    <div id="kt_docs_search_handler_menu"
+            class="d-flex align-items-stretch custom"
+
+            data-kt-search-keypress="true"
+            data-kt-search-min-length="2"
+            data-kt-search-enter="true"
+            data-kt-search-layout="menu"
+
+            data-kt-menu-trigger="auto"
+            data-kt-menu-overflow="false"
+            data-kt-menu-permanent="true"
+            data-kt-menu-placement="bottom-start">
+
+            <!--begin::Search toggle-->
+            <div class="d-flex align-items-center btn btn-active-light-secondary" data-kt-search-element="toggle" id="kt_header_search_toggle">
+                <a href="#" class=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                <label for="search" class="text-muted" id="searchlabel">Ara</label>
+            </div>
+            <!--end::Search toggle-->
+
+            <!--begin::Menu-->
+            <div data-kt-search-element="content" class="menu menu-sub menu-sub-dropdown p-7 w-325px w-md-375px">
+                <!--begin::Wrapper-->
+                <div data-kt-search-element="wrapper">
+                <!--begin::Form-->
+                    <form data-kt-search-element="form" class="w-100 position-relative mb-3" autocomplete="off">
+                        <!--begin::Icon-->
+                            <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+                        <!--end::Icon-->
+
+                        <!--begin::Input-->
+                        <input type="text"
+                            class="form-control form-control-flush ps-10"
+                            name="search"
+                            value=""
+                            placeholder="Search..."
+                            data-kt-search-element="input"/>
+                        <!--end::Input-->
+
+                        <!--begin::Spinner-->
+                        <span class="position-absolute top-50 end-0 translate-middle-y lh-0 d-none me-1"
+                            data-kt-search-element="spinner">
+                            <span class="spinner-border h-15px w-15px align-middle text-gray-400"></span>
+                        </span>
+                        <!--end::Spinner-->
+
+                        <!--begin::Reset-->
+                        <span class="btn btn-flush btn-active-color-primary position-absolute top-50 end-0 translate-middle-y lh-0 d-none"
+                            data-kt-search-element="clear">
+                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                        </span>
+                        <!--end::Reset-->
+
+                        <!--begin::Toolbar-->
+                        <div class="position-absolute top-50 end-0 translate-middle-y" data-kt-search-element="toolbar">
+                            <!--begin::Preferences toggle-->
+                            <div data-kt-search-element="preferences-show"
+                                class="btn btn-icon w-20px btn-sm btn-active-color-primary me-1"
+                                data-bs-toggle="tooltip"
+                                title="Show search preferences">
+                                <!--begin::Svg Icon | path: icons/duotune/coding/cod001.svg-->
+                            </div>
+                            <!--end::Preferences toggle-->
+
+                            <!--begin::Advanced search toggle-->
+                            <div data-kt-search-element="advanced-options-form-show"
+                                class="btn btn-icon w-20px btn-sm btn-active-color-primary"
+                                data-bs-toggle="tooltip"
+                                title="Show more search options">
+                                <!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
+                            </div>
+                            <!--end::Advanced search toggle-->
+                        </div>
+                        <!--end::Toolbar-->
+                    </form>
+                    <!--end::Form-->
+
+                    <!--begin::Search results-->
+                    <div data-kt-search-element="results" class="d-none">
+                        ...
+                    </div>
+                    <!--end::Search results-->
+
+                    <!--begin::Main content element-->
+                    <div data-kt-search-element="main">
+                        ...
+                    </div>
+                    <!--end::Main content element-->
+
+                    <!--begin::Empty search-->
+                    <div data-kt-search-element="empty" class="text-center d-none">
+                        ...
+                    </div>
+                    <!--end::Empty search-->
+                </div>
+                <!--end::Wrapper-->
+
+                <!--begin::Search Advanced Options-->
+                <div data-kt-search-element="advanced-options-form">
+                    ...
+                </div>
+                <!--end::Search Advanced Options-->
+
+                <!--begin::Search Preference-->
+                <div data-kt-search-element="preferences">
+                    ...
+                </div>
+                <!--end::Search Preference-->
+            </div>
+            <!--end::Menu-->
+        </div>
+</div>

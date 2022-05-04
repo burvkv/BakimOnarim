@@ -19,13 +19,13 @@ namespace bakimonarim.business.DependencyResolvers.Autofac
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<DailyReportHelper>().As<IDailyReportHelper>();
+            builder.RegisterType<DailyReportHelper>().As<IDailyReportHelper>().SingleInstance();
 
-            builder.RegisterType<VarlikManager>().As<IVarlikService>();
-            builder.RegisterType<VarlikDal>().As<IVarlikDal>();
+            builder.RegisterType<VarlikManager>().As<IVarlikService>().SingleInstance();
+            builder.RegisterType<VarlikDal>().As<IVarlikDal>().SingleInstance();
 
-            builder.RegisterType<VGrupManager>().As<IVGrupService>();
-            builder.RegisterType<VGrupDal>().As<IVGrupDal>();
+            builder.RegisterType<VGrupManager>().As<IVGrupService>().SingleInstance();
+            builder.RegisterType<VGrupDal>().As<IVGrupDal>().SingleInstance();
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces().EnableInterfaceInterceptors(new ProxyGenerationOptions()

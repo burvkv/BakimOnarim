@@ -18,11 +18,6 @@ namespace BuskiBakim.Controllers
             return View();
         }
 
-        [HttpPost]
-        public IActionResult Ekle(Varlik varlik)
-        {
-            _varlikService.Add(varlik);
-            return View();
-        }
+       
     }
 }

@@ -13,7 +13,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bakimonarim.business", "bak
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bakimonarim.core", "bakimonarim.core\bakimonarim.core.csproj", "{5804FF28-2730-4E4A-A952-A6FF5DD98B1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bakimonarim.consoleui", "bakimonarim.consoleui\bakimonarim.consoleui.csproj", "{3D935447-10DA-441D-ABDC-72666723DC3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bakimonarim.consoleui", "bakimonarim.consoleui\bakimonarim.consoleui.csproj", "{3D935447-10DA-441D-ABDC-72666723DC3C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DevExtreme NuGet.config", "DevExtreme NuGet.config", "{A337F8BD-0E32-4248-9504-3468643931F5}"
+	ProjectSection(SolutionItems) = preProject
+		NuGet.config = NuGet.config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

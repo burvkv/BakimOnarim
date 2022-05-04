@@ -28,7 +28,7 @@ namespace bakimonarim.business.Concrete
 
         [TransactionScopeAspect]
         [PerformanceAspect(5)]
-        [CacheRemoveAspect("IProjectService.Get")]
+        [CacheRemoveAspect("IVarlikService.Get")]
         [LogAspect(typeof(FileLogger))]
         [ValidationAspect(typeof(VarlikValidator))]
         public IResult Add(Varlik varlik)
@@ -39,7 +39,7 @@ namespace bakimonarim.business.Concrete
 
         [TransactionScopeAspect]
         [PerformanceAspect(5)]
-        [CacheRemoveAspect("IProjectService.Get")]
+        [CacheRemoveAspect("IVarlikService.Get")]
         [LogAspect(typeof(FileLogger))]
         public IResult Delete(Varlik varlik)
         {
@@ -73,7 +73,7 @@ namespace bakimonarim.business.Concrete
         [ValidationAspect(typeof(VarlikValidator))]
         [TransactionScopeAspect]
         [PerformanceAspect(5)]
-        [CacheRemoveAspect("IProjectService.Get")]
+        [CacheRemoveAspect("IVarlikService.Get")]
         [LogAspect(typeof(FileLogger))]
         public IResult Update(Varlik varlik)
         {

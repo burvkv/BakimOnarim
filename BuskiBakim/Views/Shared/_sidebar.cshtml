@@ -1,17 +1,17 @@
 ﻿<div class="sidebar">
     <div class="logo-area">
         <div class="logo">
-            <a routerLink=""><i class='bx bxl-netlify'></i></a>
+            <a href="#"><i class='bx bxl-netlify'></i></a>
     
         </div> 
     </div>
     <div class="sidebar-container">
         <div class="user-area">
             <div class="user-pic">
-                <img src="~/media/avatars/150-25.jpg" width="80px" height="80px" alt="">
+                <img src="~/app/images/profile.jpg" width="80px" height="80px" alt="">
             </div>
             <div class="user-info">
-                <label class="user-name" for="">Ad Soyad</label>
+                <label class="user-name" for="">Burak Arslan</label>
                 <br>
                 <label class="role" for="stat">Admin</label>
                 <br>
@@ -21,13 +21,13 @@
         <div class="items-area">
            <ul class="menu-items">
             <li>
-                <a href="#"><i class="fa-solid fa-gauge"></i>Panel</a>
+                <a asp-controller="Panel" asp-action="Index"><i class="fa-solid fa-gauge"></i>Panel</a>
             </li>
             <li>
-                <a href="#"><i class="fa-solid fa-car"></i>Varlıklar</a>
+                <a asp-controller="Varlik" asp-action="Index"><i class="fa-solid fa-car"></i>Varlıklar</a>
             </li>
             <li>
-                <a href="#"><i class="fa-solid fa-tags"></i>Gruplar</a>
+                <a asp-controller="VGrup" asp-action="Index"><i class="fa-solid fa-tags"></i>Gruplar</a>
             </li>
             <li>
                 <a href="#"><i class="fa-solid fa-arrow-down-short-wide"></i>İş Emirleri</a>

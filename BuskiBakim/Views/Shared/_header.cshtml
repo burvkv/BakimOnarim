@@ -1,0 +1,11 @@
+<div class="container-fluid header-container" >
+    <div class="row">
+        <div class="col-md-8 ">
+           @await Html.PartialAsync("_breadcrumb")
+        </div>
+        <div class="col">
+            <div class="right-buttons">
+                @await Html.PartialAsync("_search")
+             </div>      
+        </div>
+</div>
