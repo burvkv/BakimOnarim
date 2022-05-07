@@ -221,14 +221,14 @@ input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
 
 
 #sidebar {
-  min-width: 35vh;
-  max-width: 35vh;
+  min-width: 38vh;
+  max-width: 38vh;
   min-height: 100vh;
   transition: all .3s ease;
 }
 
 #sidebar.active {
-  margin-left: -35vh;
+  margin-left: -38vh;
 }
 
 a[data-toggle="collapse"] {
@@ -273,11 +273,18 @@ a[data-toggle="collapse"] {
 .dx-datagrid .dx-data-row > td.bullet {
     padding-top: 0;
     padding-bottom: 0;
-    
+
 }
 
 #chart {
     height: 440px;
+}
+#chart2{
+  height: 440px;
+  padding-left: 7%;
+  padding-top: 7%;
+  
+ 
 }
 
 .divider:after,

@@ -1,0 +1,42 @@
+@using DevExtreme.AspNet.Mvc.Builders
+
+@(Html.DevExtreme().DataGrid<bakimonarim.entity.Malzeme>()
+    .DataSource(d => d.Mvc()
+        .Controller("Malzeme")
+        .LoadAction("OlmayanMalzemeleriGetir")
+        .Key("MalzemeID")
+        
+    )
+    .RemoteOperations(false)
+    .ShowBorders(false)
+    .GroupPanel(e=>e.Visible(false).EmptyPanelText(""))
+    .Grouping(g=>g.ContextMenuEnabled(false).Texts(d=>d.GroupByThisColumn("").GroupContinuedMessage("").GroupContinuesMessage("").UngroupAll("")))
+    .Columns(columns => {
+        columns.AddFor(m => m.MalzemeAd);
+    })
+    .FilterRow(f => f.Visible(true))
+    .HeaderFilter(f => f.Visible(true))
+    .GroupPanel(p => p.Visible(true).EmptyPanelText("Stokta Kalmayan Malzemeler"))
+    .Scrolling(s => s.Mode(GridScrollingMode.Virtual))
+    .Height(500)
+    .ShowBorders(true)
+    
+    @*.MasterDetail(md => md
+        .Enabled(true)
+        .Template(@<text>
+
+            @(Html.DevExtreme().DataGrid()
+                .DataSource(d => d.Mvc()
+                    .Controller("VGrup")
+                    .LoadAction("OrderDetails")
+                    .LoadParams(new { vGrupId = new JS("data.VGrupId") })
+                )
+                .ShowBorders(true)
+            )
+
+        </text>)
+    )*@
+    .Editing(e => e.AllowAdding(false).AllowDeleting(false).AllowUpdating(false).UseIcons(false))
+    .Grouping(g => g.AutoExpandAll(false))
+    
+    )

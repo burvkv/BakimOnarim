@@ -8,7 +8,7 @@ using bakimonarim.entity;
 
 namespace bakimonarim.dataaccess.Abstract
 {
-    public interface IVarlikDal:IEntityRepository<Varlik>
+    public interface IVarlikDal:IEntityRepository<Varlik2>
     {
     }
 }

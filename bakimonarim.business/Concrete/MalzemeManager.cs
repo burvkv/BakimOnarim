@@ -1,4 +1,5 @@
-﻿using bakimonarim.business.Abstracts;
+using System.Linq.Expressions;
+using bakimonarim.business.Abstracts;
 using bakimonarim.business.Validation.FluentValidation;
 using bakimonarim.core.Aspect.Autofac.Caching;
 using bakimonarim.core.Aspect.Autofac.Logging;
@@ -9,31 +10,26 @@ using bakimonarim.core.CrossCuttingConcerns.Logging.Log4Net.Loggers.FileLogger;
 using bakimonarim.core.Utilities.Results;
 using bakimonarim.dataaccess.Abstract;
 using bakimonarim.entity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace bakimonarim.business.Concrete
 {
-    public class VarlikManager : IVarlikService
+    public class MalzemeManager : IMalzemeService
     {
-        private readonly IVarlikDal _varlikDal;
+        private readonly IMalzemeDal _malzemeDal;
 
-        public VarlikManager(IVarlikDal varlikDal)
+        public MalzemeManager(IMalzemeDal malzemeDal)
         {
-            _varlikDal = varlikDal;
+            _malzemeDal = malzemeDal;
         }
 
         [TransactionScopeAspect]
         [PerformanceAspect(5)]
         [CacheRemoveAspect("IVarlikService.Get")]
         [LogAspect(typeof(FileLogger))]
-        //[ValidationAspect(typeof(VarlikValidator))]
-        public IResult Add(Varlik2 varlik)
+        [ValidationAspect(typeof(VarlikValidator))]
+        public IResult Add(Malzeme malzeme)
         {
-            _varlikDal.Insert(varlik);
+            _malzemeDal.Insert(malzeme);
             return new SuccessResult();
         }
 
@@ -41,33 +37,35 @@ namespace bakimonarim.business.Concrete
         [PerformanceAspect(5)]
         [CacheRemoveAspect("IVarlikService.Get")]
         [LogAspect(typeof(FileLogger))]
-        public IResult Delete(Varlik2 varlik)
+        public IResult Delete(Malzeme malzeme)
         {
-            _varlikDal.Delete(varlik);
+            _malzemeDal.Delete(malzeme);
             return new SuccessResult();
         }
 
         [PerformanceAspect(5)]
         [CacheAspect]
-        public IDataResult<List<Varlik2>> GetAll(string key = null)
+        public IDataResult<List<Malzeme>> GetAll(string key = null)
         {
-            if (key == null)
+            if (key!=null)
             {
-                return new SuccessDataResult<List<Varlik2>>(_varlikDal.GetAll());
+                return new SuccessDataResult<List<Malzeme>>(_malzemeDal.GetAll(m=>m.MalzemeAd.Contains(key)));
             }
-            return new SuccessDataResult<List<Varlik2>>(_varlikDal.GetAll(p => p.VarlikAdi.Contains(key)));
+                return new SuccessDataResult<List<Malzeme>>(_malzemeDal.GetAll());
 
         }
 
         [PerformanceAspect(5)]
         [CacheAspect]
-        public IDataResult<Varlik2> GetByFilter(string key = null)
+        public IDataResult<Malzeme> GetByFilter(string key = null)
         {
-            if (key != null)
+            if (key ==null)
             {
-                return new SuccessDataResult<Varlik2>(_varlikDal.GetByFilter(p => p.VarlikKodu.Equals(key)));
+                return new ErrorDataResult<Malzeme>(null,"Filtre Bo� Olamaz!.");
             }
-            return new ErrorDataResult<Varlik2>(null, "Filtre boş olamaz.");
+           
+                return new SuccessDataResult<Malzeme>(_malzemeDal.GetByFilter(m=>m.MalzemeID==int.Parse(key)));
+            
         }
 
         [ValidationAspect(typeof(VarlikValidator))]
@@ -75,9 +73,9 @@ namespace bakimonarim.business.Concrete
         [PerformanceAspect(5)]
         [CacheRemoveAspect("IVarlikService.Get")]
         [LogAspect(typeof(FileLogger))]
-        public IResult Update(Varlik2 varlik)
+        public IResult Update(Malzeme malzeme)
         {
-            _varlikDal.Update(varlik);
+            _malzemeDal.Update(malzeme);
             return new SuccessResult();
         }
     }

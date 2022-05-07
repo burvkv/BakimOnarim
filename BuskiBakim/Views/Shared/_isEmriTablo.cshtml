@@ -1,32 +1,41 @@
 ﻿
 @(Html.DevExtreme().DataGrid<bakimonarim.entity.VGrup>()
     .DataSource(d => d.Mvc()
-        .Controller("VGrup")
+        .Controller("Gruplar")
         .LoadAction("GetGroups")
         .InsertAction("Insert")
         .UpdateAction("Update")
         .DeleteAction("Delete")
         .Key("GrupID")
+        
     )
-    .RemoteOperations(true)
+    .RemoteOperations(true) 
     .Columns(columns => {
-        columns.AddFor(m => m.GrupID).AllowEditing(false).AllowFiltering(false);
+        columns.AddFor(m => m.GrupID).AllowEditing(false).AllowFiltering(false).Visible(false);
 
-        columns.AddFor(m => m.AracSinifID);
+        columns.AddFor(m => m.AracSinifID).Alignment(HorizontalAlignment.Left).AllowHiding(true).HidingPriority(1);
 
         columns.AddFor(m => m.GrupMarka);
 
-        columns.AddFor(m => m.GrupModel);
+        columns.AddFor(m => m.GrupModel).AllowHiding(true).HidingPriority(2);
 
-        columns.AddFor(m => m.LastikTip);
-
+        columns.AddFor(m => m.LastikTip).AllowHiding(true).HidingPriority(3);
+        
     })
     .FilterRow(f => f.Visible(true))
     .HeaderFilter(f => f.Visible(true))
-    .GroupPanel(p => p.Visible(true))
-    .Scrolling(s => s.Mode(GridScrollingMode.Virtual))
+    .GroupPanel(p => p.Visible(true).EmptyPanelText("İş Emirleri"))
     .Height(600)
     .ShowBorders(true)
+    .Pager(p=>
+    p.AllowedPageSizes(new List<int>{10,15,20,25})
+    .ShowNavigationButtons(true)
+    .ShowPageSizeSelector(true)
+    .Visible(true)
+    .ShowNavigationButtons(true)
+    )
+    
+    
     @*.MasterDetail(md => md
         .Enabled(true)
         .Template(@<text>
@@ -42,7 +51,19 @@
 
         </text>)
     )*@
-    .Editing(e => e.AllowAdding(true).AllowDeleting(true).AllowUpdating(true).UseIcons(true))
+    .Editing(e => 
+    e.AllowAdding(true)
+    .AllowDeleting(true)
+    .AllowUpdating(true)
+    .UseIcons(true)
+    .Mode(GridEditMode.Popup)
+    .Popup(p=>
+        p.Title("İş Emri Ekle & Düzenle")
+        .ShowTitle(true)
+        .Width(700)
+        .Height(500)  
+        )
+    )
     .Grouping(g => g.AutoExpandAll(false))
     
     )

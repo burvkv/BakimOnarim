@@ -1,13 +1,13 @@
  @(Html.DevExtreme().PieChart()
     .ID("pie")
     .Type(PieChartType.Doughnut)
-    .Palette(VizPalette.SoftPastel)
-    .Title("Varlık Grupları")
+    .Palette(VizPalette.DarkMoon)
+    .Title(t=>t.Text("Varlık Grupları").Font(f=>f.Color("#3f3f3f").Family("Poppins").Weight(600)))
     .Legend(l => l
         .HorizontalAlignment(HorizontalAlignment.Center)
         .VerticalAlignment(VerticalEdge.Bottom)
     )
-    .Export(e => e.Enabled(true))
+    .Export(e => e.Enabled(false))
     .Series(s => s
         .Add()
         .SmallValuesGrouping(g => g

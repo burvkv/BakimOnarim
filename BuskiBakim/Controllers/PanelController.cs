@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BuskiBakim.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BuskiBakim.Controllers
 {
@@ -6,7 +8,9 @@ namespace BuskiBakim.Controllers
     {
         public IActionResult Index()
         {
+         
             return View();
         }
+      
     }
 }

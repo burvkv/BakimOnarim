@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace bakimonarim.dataaccess.Concrete
 {
-    public class VarlikDal : EfEntityRepositoryBase<Varlik, BakimOnarimDbContext>, IVarlikDal
+    public class VarlikDal : EfEntityRepositoryBase<Varlik2, BakimOnarimDbContext>, IVarlikDal
     {
     }
 }

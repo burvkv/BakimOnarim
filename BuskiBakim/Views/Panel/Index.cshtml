@@ -4,19 +4,33 @@
 </div>
 <div class="container">
     <div class="ornek" style="width: 100%; min-height: 500px; height: max-content; background-color: white; margin-top:30px; box-shadow: 5px 10px 5px #ebebeb; padding: 10px;">
-        @await Html.PartialAsync("_isEmriTablo")
+        @await Html.PartialAsync("_varlikTablo")
 
     </div>
 
-    <div class="ornek" style="width: 100%; min-height: 460px; height: max-content; background-color: white; margin-top:30px; box-shadow: 5px 10px 5px #ebebeb; padding: 15px;">
+    <div class="ornek" style=" min-height: 460px; height: max-content;  margin-top:30px;  padding: 15px;">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-7" style="background-color: #fafafa; box-shadow: 5px 10px 5px #ebebeb;">
                 @await Html.PartialAsync("_isEmriGrafik")
             </div>
-            <div class="col-md-6" >
+            <div class="col-md-5" style=" box-shadow: 5px 10px 5px #ebebeb; margin-top:12px;">
                @await Html.PartialAsync("_vGrupBarGrafik")
             </div>
         </div>
+
+         <div class="ornek" style="width: 100%; min-height: 500px; height: max-content;  margin-top:30px;  padding: 10px;">
+                <div class="row">
+                    <div class="col-md-5" style="background-color: white; box-shadow: 5px 10px 5px #ebebeb; padding:30px;">
+                        @await Html.PartialAsync("_olmayanMalzeme")
+                     </div>
+                    <div class="col-md-7" style="background-color: white; box-shadow: 5px 10px 5px #ebebeb; padding:30px;">
+
+                    </div>
+                    
+              </div>
+
+             
+         </div>
         
     </div>
 </div>

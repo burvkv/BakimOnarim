@@ -10,9 +10,9 @@ namespace bakimonarim.dataaccess.Concrete
 {
     public class BakimOnarimDbContext : DbContext
     {
-        public DbSet<Varlik> TBL_Varlik { get; set; }
+        public DbSet<Varlik2> TBL_Varlik2 { get; set; }
         public DbSet<VGrup> TBL_VGrup { get; set; }
-
+        public DbSet<Malzeme> TBL_Malzeme {get;set;}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

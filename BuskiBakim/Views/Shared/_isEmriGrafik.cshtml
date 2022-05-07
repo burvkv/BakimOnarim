@@ -1,4 +1,4 @@
-﻿@(Html.DevExtreme().Chart()
+﻿@* @(Html.DevExtreme().Chart()
     .ID("chart")
     .Rotated(true)
     .DataSource("https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/data/simpleJSON.json")
@@ -28,4 +28,26 @@
     )
     .Export(e => e.Enabled(true))
     .Legend(l => l.Visible(false))
+) *@
+
+
+
+@(Html.DevExtreme().Chart()
+    .ID("chart2")
+    .Series(s => s
+        .Add()
+        .ArgumentField("Day")
+        .ValueField("Oranges")
+        .Name("Bitirilen İşler")
+        .Type(SeriesType.Bar)
+        .Color("#ffaa66")
+    )
+    .DataSource(new[] {
+        new { Day = "Pazartesi", Oranges = 3 },
+        new { Day = "Salı", Oranges = 2 },
+        new { Day = "Çarşamba", Oranges = 3 },
+        new { Day = "Perşembe", Oranges = 4 },
+        new { Day = "Cuma", Oranges = 6 },
+        new { Day = "Cumartesi", Oranges = 11 }
+    })
 )

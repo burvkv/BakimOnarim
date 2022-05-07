@@ -1,0 +1,57 @@
+
+@(Html.DevExtreme().DataGrid<bakimonarim.entity.Varlik2>()
+    .DataSource(d => d.Mvc()
+        .Controller("Varliklar")
+        .LoadAction("VarliklariGetir")
+        .InsertAction("Insert")
+        .UpdateAction("Update")
+        .DeleteAction("Delete")
+        .Key("VarlikID")
+        
+    )
+    .RemoteOperations(true) 
+    .Columns(columns => {
+        columns.AddFor(m => m.VarlikID).AllowEditing(false).AllowFiltering(false).Visible(false);
+        columns.AddFor(m => m.GrupID)
+        .Lookup(l=>
+        l.DataSource(d=>d.Mvc().Controller("Gruplar").LoadAction("GetGroups").Key("GrupID"))
+        .DisplayExpr("GrupModel")
+        .ValueExpr("GrupID")
+        
+        ).Caption("Grup");
+        columns.AddFor(m => m.VarlikAdi);
+        columns.AddFor(m => m.VarlikKodu);
+        columns.AddFor(m => m.KayitTarihi);
+        
+    })
+    .FilterRow(f => f.Visible(true))
+    .HeaderFilter(f => f.Visible(true))
+    .GroupPanel(p => p.Visible(true).EmptyPanelText("Varlıklar"))
+    .Pager(p=>
+    p.DisplayMode(GridPagerDisplayMode.Adaptive)
+    .ShowNavigationButtons(true)
+    .ShowInfo(true)
+    .Visible(true)
+    )
+    .Height(600)
+    .ShowBorders(true)
+    
+    @*.MasterDetail(md => md
+        .Enabled(true)
+        .Template(@<text>
+
+            @(Html.DevExtreme().DataGrid()
+                .DataSource(d => d.Mvc()
+                    .Controller("VGrup")
+                    .LoadAction("OrderDetails")
+                    .LoadParams(new { vGrupId = new JS("data.VGrupId") })
+                )
+                .ShowBorders(true)
+            )
+
+        </text>)
+    )*@
+    .Editing(e => e.AllowAdding(true).AllowDeleting(true).AllowUpdating(true).UseIcons(true).Mode(GridEditMode.Popup))
+    .Grouping(g => g.AutoExpandAll(false))
+    
+    )

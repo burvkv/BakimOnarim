@@ -1,5 +1,6 @@
 ﻿using bakimonarim.business.Abstracts;
 using bakimonarim.entity;
+using BuskiBakim.ViewModels;
 using DevExtreme.AspNet.Data;
 using DevExtreme.AspNet.Mvc;
 using Microsoft.AspNetCore.Mvc;
@@ -7,11 +8,11 @@ using Newtonsoft.Json;
 
 namespace BuskiBakim.Controllers
 {
-    public class VGrupController : Controller
+    public class GruplarController : Controller
     {
         private readonly IVGrupService _vGrupService;
 
-        public VGrupController(IVGrupService vGrupService)
+        public GruplarController(IVGrupService vGrupService)
         {
             _vGrupService = vGrupService;
         }
@@ -19,6 +20,7 @@ namespace BuskiBakim.Controllers
         
         public IActionResult Index()
         {
+           
             
             return View();
         }
@@ -51,5 +53,7 @@ namespace BuskiBakim.Controllers
             var result = _vGrupService.GetAll();
             return DataSourceLoader.Load(result.Data, loadOptions);
         }
+
+       
     }
 }

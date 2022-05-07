@@ -27,6 +27,9 @@ namespace bakimonarim.business.DependencyResolvers.Autofac
             builder.RegisterType<VGrupManager>().As<IVGrupService>().SingleInstance();
             builder.RegisterType<VGrupDal>().As<IVGrupDal>().SingleInstance();
 
+            builder.RegisterType<MalzemeManager>().As<IMalzemeService>().SingleInstance();
+            builder.RegisterType<MalzemeDal>().As<IMalzemeDal>().SingleInstance();
+            
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces().EnableInterfaceInterceptors(new ProxyGenerationOptions()
             {

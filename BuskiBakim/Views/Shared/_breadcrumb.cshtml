@@ -1,5 +1,19 @@
+@{
+    var controller = ViewContext.RouteData.Values["controller"].ToString();
+    var action = ViewContext.RouteData.Values["action"].ToString();
+    controller = (char.ToUpper(controller[0]) + controller.Substring(1));
+    action = (char.ToUpper(action[0]) + action.Substring(1));
+    
+}
+
  <ol class="breadcrumb breadcrumb-dot text-muted fs-6 fw-bold" >
-    <li class="breadcrumb-item pe-3"><a href="#" class="pe-3">Bakım Onarım</a></li>
-    <li class="breadcrumb-item pe-3"><a href="#" class="pe-3">Uygulama</a></li>
-    <li class="breadcrumb-item px-3 text-muted">Panel</li>
+   
+     @if(controller != "Panel"){
+          <li class="breadcrumb-item pe-3"><a asp-controller="Panel"  class="pe-3">Panel</a></li>
+     }
+         <li class="breadcrumb-item pe-3"><a asp-controller=@controller  class="pe-3">@controller</a></li>
+         <li class="breadcrumb-item pe-3 "><a asp-controller=@controller  class="pe-3 text-muted">@action</a></li>
+        
+     
+    
 </ol>

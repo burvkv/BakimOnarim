@@ -10,11 +10,11 @@ namespace bakimonarim.business.Abstracts
 {
     public interface IVarlikService
     {
-        IDataResult<List<Varlik>> GetAll(string key = null);
-        IDataResult<Varlik> GetByFilter(string key = null);
-        IResult Add(Varlik varlik);
-        IResult Delete(Varlik varlik);  
-        IResult Update(Varlik varlik);
+        IDataResult<List<Varlik2>> GetAll(string key = null);
+        IDataResult<Varlik2> GetByFilter(string key = null);
+        IResult Add(Varlik2 varlik);
+        IResult Delete(Varlik2 varlik);  
+        IResult Update(Varlik2 varlik);
 
     }
 }

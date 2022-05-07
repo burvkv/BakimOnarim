@@ -57,12 +57,12 @@ app.UseEndpoints(endpoints =>
     endpoints.MapControllerRoute(
        name: "panel/gruplar",
        pattern: "panel/gruplar",
-       defaults: new { controller = "vgrup", action = "index" }
+       defaults: new { controller = "Gruplar", action = "index" }
        );
     endpoints.MapControllerRoute(
        name: "panel/varliklar",
        pattern: "panel/varliklar",
-       defaults: new { controller = "varlik", action = "index" }
+       defaults: new { controller = "Varliklar", action = "index" }
        );
     endpoints.MapControllerRoute(
        name: "panel/giris-yap",
@@ -86,7 +86,7 @@ app.UseEndpoints(endpoints =>
         );
     endpoints.MapControllerRoute(
         name: "default",
-        pattern: "{controller=landing}/{action=index}/{id?}"
+        pattern: "{controller=panel}/{action=index}/{id?}"
         );
 
 });
