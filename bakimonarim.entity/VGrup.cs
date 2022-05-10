@@ -11,5 +11,7 @@ namespace bakimonarim.entity
         public string GrupMarka { get; set; }
         public string GrupModel { get; set; }
         public string LastikTip { get; set; }
+
+        public ICollection<Varlik2> TBL_Varlik { get; set; }
     }
 }

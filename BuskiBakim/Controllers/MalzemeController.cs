@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using bakimonarim.business.Abstracts;
 using DevExtreme.AspNet.Data;
 using DevExtreme.AspNet.Mvc;
-using BuskiBakim.ViewModels;
+
 
 namespace bakimonarim.webui.Controllers
 {

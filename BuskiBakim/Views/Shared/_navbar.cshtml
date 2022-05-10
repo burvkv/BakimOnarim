@@ -4,7 +4,7 @@
     <div class="container-fluid">
 
    <div class="menu-icon">
-		<input class="menu-icon__cheeckbox" checked id="sidebarCollapse" type="checkbox" />
+		<input class="menu-icon__cheeckbox" id="sidebarCollapse" type="checkbox" />
 		<div>
 			<span></span>
 			<span></span>
@@ -43,6 +43,14 @@
                     <div class="menu-sub menu-sub-dropdown p-3 w-200px">
                         <!--begin::Menu item-->
                         <div class="menu-item">
+                            <a class="menu-link px-1 py-3" asp-controller="auth" asp-action="logout">
+                                <span class="menu-bullet me-0">
+                                </span>
+                                <span class="menu-title">Profil</span>
+                            </a>
+                        </div>
+                       
+                        <div class="menu-item">
                             <a href="#" class="menu-link px-1 py-3">
                                 <span class="menu-bullet me-0">
                                 </span>
@@ -53,7 +61,7 @@
 
                         <!--begin::Menu item-->
                         <div class="menu-item">
-                            <a href="#" class="menu-link px-1 py-3">
+                            <a class="menu-link px-1 py-3" asp-controller="auth" asp-action="logout">
                                 <span class="menu-bullet me-0">
                                 </span>
                                 <span class="menu-title">Çıkış Yap</span>

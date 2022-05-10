@@ -1,6 +1,6 @@
 ﻿using bakimonarim.business.Abstracts;
 using bakimonarim.entity;
-using BuskiBakim.ViewModels;
+
 using DevExtreme.AspNet.Data;
 using DevExtreme.AspNet.Mvc;
 using Microsoft.AspNetCore.Mvc;

@@ -10,7 +10,10 @@ using bakimonarim.core.Utilities.Interceptors;
 using bakimonarim.core.Utilities.IoC;
 using bakimonarim.dataaccess.Abstract;
 using bakimonarim.dataaccess.Concrete;
+using bakimonarim.entity.Identity;
 using Castle.DynamicProxy;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Serialization;
 
@@ -35,7 +38,25 @@ builder.Services.AddDependencyResolvers(new ICoreModule[]
 });
 
 
+
 builder.Services.AddDbContext<BakimOnarimDbContext>();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(x =>
+{
+    x.Password.RequireNonAlphanumeric = false;
+    x.Password.RequireUppercase = false;
+    x.User.RequireUniqueEmail = true;
+
+}).AddEntityFrameworkStores<BakimOnarimDbContext>();
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/panel/giris-yap";
+    options.LogoutPath = "/panel/cikis-yap";
+    options.Cookie.Name = "auth_cookie";
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+    options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
+    options.Cookie.HttpOnly = true;
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -47,7 +68,7 @@ if (!app.Environment.IsDevelopment())
 }
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseAuthentication();
 app.UseRouting();
 
 app.UseAuthorization();
@@ -75,14 +96,19 @@ app.UseEndpoints(endpoints =>
        defaults: new { controller = "auth", action = "register" }
        );
     endpoints.MapControllerRoute(
+       name: "panel/cikis-yap",
+       pattern: "panel/cikis-yap",
+       defaults: new { controller = "auth", action = "logout" }
+       );
+    endpoints.MapControllerRoute(
        name: "panel",
        pattern: "panel",
        defaults: new { controller = "panel", action = "index" }
        );
     endpoints.MapControllerRoute(
-        name:"landing",
-        pattern:"landing",
-        defaults: new {controller = "landing", action = "index"}
+        name: "landing",
+        pattern: "landing",
+        defaults: new { controller = "landing", action = "index" }
         );
     endpoints.MapControllerRoute(
         name: "default",

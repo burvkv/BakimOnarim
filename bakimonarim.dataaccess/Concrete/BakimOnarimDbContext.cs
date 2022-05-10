@@ -1,4 +1,7 @@
-﻿using bakimonarim.entity;
+﻿
+using bakimonarim.entity;
+using bakimonarim.entity.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,16 +11,17 @@ using System.Threading.Tasks;
 
 namespace bakimonarim.dataaccess.Concrete
 {
-    public class BakimOnarimDbContext : DbContext
+    public class BakimOnarimDbContext : IdentityDbContext
     {
-        public DbSet<Varlik2> TBL_Varlik2 { get; set; }
+        
+        public DbSet<Varlik2> TBL_Varlik { get; set; }
         public DbSet<VGrup> TBL_VGrup { get; set; }
         public DbSet<Malzeme> TBL_Malzeme {get;set;}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=bakimonarimdb;Trusted_Connection=True;");
-
+            optionsBuilder.UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=bakimonarimdbexample;Trusted_Connection=True;");
+            base.OnConfiguring(optionsBuilder);
         }
 
 

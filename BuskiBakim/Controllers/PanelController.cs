@@ -1,14 +1,26 @@
-﻿using BuskiBakim.ViewModels;
+﻿
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BuskiBakim.Controllers
 {
+    [Authorize]
     public class PanelController : Controller
     {
-        public IActionResult Index()
+        private readonly UserManager<IdentityUser> _userManager;
+
+        public PanelController(UserManager<IdentityUser> userManager)
         {
-         
+            _userManager = userManager;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var currentUser = await _userManager.GetUserAsync(HttpContext.User);
+
+            
             return View();
         }
       

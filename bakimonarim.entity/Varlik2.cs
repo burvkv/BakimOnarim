@@ -16,5 +16,7 @@ namespace bakimonarim.entity
         public string VarlikAdi { get; set; }
         public string VarlikKodu { get; set; }
         public DateTime KayitTarihi { get; set; }
+
+        public VGrup TBL_VGrup { get; set; }
     }
 }
