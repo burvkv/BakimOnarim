@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - BuskiBakim</title>
+    <title>@ViewData["Title"]</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon-16x16.ico"/>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     @*devextreme *@
     <link href="~/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
@@ -31,7 +32,7 @@
         <main class="wrapper" style="overflow-x: hidden;">
             
             <nav id="sidebar">
-                @await Html.PartialAsync("_sidebar")
+                @await Component.InvokeAsync("Sidebar")
             </nav>
 
             <div class="container-fluid w-100 content p-0 m-0">

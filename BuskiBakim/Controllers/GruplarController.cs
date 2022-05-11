@@ -3,11 +3,13 @@ using bakimonarim.entity;
 
 using DevExtreme.AspNet.Data;
 using DevExtreme.AspNet.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace BuskiBakim.Controllers
 {
+    [Authorize]
     public class GruplarController : Controller
     {
         private readonly IVGrupService _vGrupService;
@@ -20,8 +22,9 @@ namespace BuskiBakim.Controllers
         
         public IActionResult Index()
         {
-           
-            
+            ViewData["Title"] = "Gruplar";
+
+
             return View();
         }
         [HttpPost]

@@ -11,7 +11,7 @@ namespace bakimonarim.webui.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signinManager;
-
+        
         public AuthController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signinManager)
         {
             _userManager = userManager;
@@ -19,7 +19,7 @@ namespace bakimonarim.webui.Controllers
         }
         public async Task<IActionResult> Logout()
         {
-            
+            ViewData["Title"] = "Çıkış yapılıyor...";
             await _signinManager.SignOutAsync();
             return RedirectToAction("Login", "Auth");
         }
@@ -27,6 +27,7 @@ namespace bakimonarim.webui.Controllers
        [HttpGet]
         public IActionResult Login()
         {
+            ViewData["Title"] = "Panele Giriş";
             return View();
             
         }
@@ -34,6 +35,7 @@ namespace bakimonarim.webui.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(UserSignInViewModel p)
         {
+            ViewData["Title"] = "Giriş Yapılıyor";
             if (ModelState.IsValid)
             {
                 var result = await _signinManager.PasswordSignInAsync(p.Username, p.Password, false, true);
@@ -50,16 +52,19 @@ namespace bakimonarim.webui.Controllers
             return View();
 
         }
- 
+
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Register()
         {
+            ViewData["Title"] = "Kullanıcı Kayıt";
            return View();
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Register(UserSignUpViewModel p)
         {
+            ViewData["Title"] = "Kayıt ediliyor..";
             if (ModelState.IsValid)
             {
                 ApplicationUser user = new ApplicationUser()

@@ -1,10 +1,12 @@
 ﻿using bakimonarim.business.Abstracts;
 using bakimonarim.entity.Identity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace bakimonarim.webui.Controllers
 {
+    [Authorize]
     public class HesapController : Controller
     {
         private readonly IFileService _fileService;
@@ -20,6 +22,7 @@ namespace bakimonarim.webui.Controllers
         public async Task<IActionResult> Index()
         {
             user = await GetApplicationUser();
+            ViewData["Title"] = user.UserName + " - Hesap Yönetimi";
             return View(user);
         }
         public async Task<IActionResult> UploadImage(IFormFile file)

@@ -6,6 +6,7 @@ namespace BuskiBakim.Controllers
     {
         public IActionResult Index()
         {
+            ViewData["Title"] = "Tanıtım";
             return View();
         }
     }

@@ -1,4 +1,11 @@
-﻿<div class="sidebar">
+﻿@model ApplicationUser
+@{
+    if(String.IsNullOrEmpty(Model.ImagePath))
+    {
+        Model.ImagePath = "avatar.png";
+    }
+}
+<div class="sidebar">
     <div class="logo-area">
         <div class="logo">
             <a href="#"><i class='bx bxl-netlify'></i></a>
@@ -8,12 +15,12 @@
     <div class="sidebar-container">
         <div class="user-area">
             <div class="user-pic">
-                <img src="~/app/images/profile.jpg" width="80px" height="80px" alt="">
+                <img src="~/app/images/@Model.ImagePath" width="80px" height="80px" alt="">
             </div>
             <div class="user-info">
-                <label class="user-name" for="">Burak Arslan</label>
+                <label class="user-name" for="">@Model.UserName</label>
                 <br>
-                <label class="role" for="stat">Admin</label>
+                <label class="role" for="stat">@Model.Email</label>
                 <br>
                 <label class="status" for="stat">Çevrimiçi <div class="status-online"></div></label>
             </div>

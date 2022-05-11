@@ -1,15 +1,17 @@
-﻿@model ApplicationUser
+﻿
+@model ApplicationUser
 @{
     if(String.IsNullOrEmpty(Model.ImagePath))
     {
         Model.ImagePath = "avatar.png";
     }
 }
+
 <div class="container" style="height: 100%;">
     <div class="row pb-10" style="height: max-content;">
         <div class="container mt-10 pb-10 shadow" style="height: max-content; width: 400px; min-height: fit-content; border: 1px solid #e0e0e0; border-radius:12px;">
             <form method="post" asp-controller="hesap" asp-action="UploadImage" enctype="multipart/form-data">
-                <div class="d-flex justify-content-center pt-10">
+                <div class="d-flex justify-content-center pt-10" style="position:relative">
                 
 
               
