@@ -1,6 +1,7 @@
 ﻿
 using bakimonarim.entity;
 using bakimonarim.entity.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace bakimonarim.dataaccess.Concrete
 {
-    public class BakimOnarimDbContext : IdentityDbContext
+    public class BakimOnarimDbContext : IdentityDbContext<ApplicationUser>
     {
         
         public DbSet<Varlik2> TBL_Varlik { get; set; }

@@ -56,7 +56,7 @@ namespace bakimonarim.core.Utilities.Helpers.File
 
         public IResult Remove(string path)
         {
-            RemoveOldFile((_currentDirectory + path).Replace("/", "\\"));
+            RemoveOldFile((_currentDirectory + _folderName + path).Replace("/", "\\"));
             return new SuccessResult();
         }
 
@@ -116,7 +116,7 @@ namespace bakimonarim.core.Utilities.Helpers.File
             CreateFile(_currentDirectory + _folderName + randomName + type, file);
 
 
-            return new SuccessResult((_folderName + randomName + type).Replace("\\", "/"));
+            return new SuccessResult(randomName + type);
 
         }
 

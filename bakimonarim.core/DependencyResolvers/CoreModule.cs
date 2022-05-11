@@ -1,5 +1,6 @@
 ﻿using bakimonarim.core.CrossCuttingConcerns.Caching;
 using bakimonarim.core.CrossCuttingConcerns.Caching.Microsoft;
+using bakimonarim.core.Utilities.Helpers.File;
 using bakimonarim.core.Utilities.IoC;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,6 +20,7 @@ namespace bakimonarim.core.DependencyResolvers
             services.AddMemoryCache();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSingleton<ICacheManager, MemoryCacheManager>();
+            services.AddSingleton<IFileHelper, FileHelper>();
             services.AddSingleton<Stopwatch>();
         }
     }

@@ -10,5 +10,6 @@ namespace bakimonarim.entity.Identity
 {
     public class ApplicationUser:IdentityUser
     {
+        public string? ImagePath { get; set; }
     }
 }

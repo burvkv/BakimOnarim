@@ -9,16 +9,17 @@ namespace bakimonarim.webui.Controllers
     [AllowAnonymous]
     public class AuthController : Controller
     {
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signinManager;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signinManager;
 
-        public AuthController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signinManager)
+        public AuthController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signinManager)
         {
             _userManager = userManager;
             _signinManager = signinManager;
         }
         public async Task<IActionResult> Logout()
         {
+            
             await _signinManager.SignOutAsync();
             return RedirectToAction("Login", "Auth");
         }
@@ -61,7 +62,7 @@ namespace bakimonarim.webui.Controllers
         {
             if (ModelState.IsValid)
             {
-                IdentityUser user = new IdentityUser()
+                ApplicationUser user = new ApplicationUser()
                 {
                     Email = p.Mail,
                     UserName = p.Username                

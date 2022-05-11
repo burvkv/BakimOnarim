@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using bakimonarim.dataaccess.Concrete;
 
@@ -11,9 +12,10 @@ using bakimonarim.dataaccess.Concrete;
 namespace bakimonarim.dataaccess.Migrations
 {
     [DbContext(typeof(BakimOnarimDbContext))]
-    partial class BakimOnarimDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220510205033_mig_4")]
+    partial class mig_4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

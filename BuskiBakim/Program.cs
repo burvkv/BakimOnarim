@@ -40,7 +40,7 @@ builder.Services.AddDependencyResolvers(new ICoreModule[]
 
 
 builder.Services.AddDbContext<BakimOnarimDbContext>();
-builder.Services.AddIdentity<IdentityUser, IdentityRole>(x =>
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(x =>
 {
     x.Password.RequireNonAlphanumeric = false;
     x.Password.RequireUppercase = false;
@@ -70,7 +70,6 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAuthentication();
 app.UseRouting();
-
 app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>

@@ -298,3 +298,29 @@ background: #c9c9c9;
     height: 440px;
 }
 
+.photo-edit-div {
+    position: absolute;
+    z-index: 99;
+    border-radius: 50%;
+    background-color: black;
+    width: 150px;
+    height: 150px;
+    
+}
+.photo-edit-icon {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+}
+.photo-edit-link {
+    opacity: 0;
+    cursor:pointer;
+}
+.photo-edit-link:hover {
+        opacity: 0.4;
+        transition: all .3s ease;
+}
+#upload{
+    display:none;
+}

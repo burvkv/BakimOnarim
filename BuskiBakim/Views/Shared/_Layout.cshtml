@@ -35,11 +35,10 @@
             </nav>
 
             <div class="container-fluid w-100 content p-0 m-0">
-                @await Html.PartialAsync("_navbar")
+                @await Component.InvokeAsync("Navbar")
                 @await Html.PartialAsync("_header")
                 @RenderBody()
             </div>
-                                        
             
         </main>
         

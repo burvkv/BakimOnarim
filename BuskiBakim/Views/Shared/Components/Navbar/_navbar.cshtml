@@ -1,4 +1,13 @@
-﻿<!-- Just an image -->
+﻿@using Microsoft.AspNetCore.Identity
+@using bakimonarim.entity.Identity
+@model ApplicationUser
+@{
+    if(String.IsNullOrEmpty(Model.ImagePath))
+    {
+        Model.ImagePath = "avatar.png";
+    }
+}
+<!-- Just an image -->
 <nav id="navbar navbar-expand-md fixed-top">
     
     <div class="container-fluid">
@@ -35,7 +44,7 @@
                     <!--begin::Menu link-->
                     <button type="button" class="menu-link btn btn-icon btn-active-light-secondary custom profile-button dropdown-toggle"  id="dropdownMenuButton" data-toggle="dropdown" ariai-haspopup="true" aria-expanded="false" style="margin-left: 10px;">
                     <div class="profile-btn-shadow"></div>
-                    <img src="~/app/images/profile.jpg" alt="" width="40px" height="40px" style="border-radius: 50%;">
+                    <img src="~/app/images/@Model.ImagePath" alt="" width="40px" height="40px" style="border-radius: 50%;">
                 </button>
                     <!--end::Menu link-->
 
@@ -43,10 +52,10 @@
                     <div class="menu-sub menu-sub-dropdown p-3 w-200px">
                         <!--begin::Menu item-->
                         <div class="menu-item">
-                            <a class="menu-link px-1 py-3" asp-controller="auth" asp-action="logout">
+                            <a class="menu-link px-1 py-3" asp-controller="hesap" asp-action="index" >
                                 <span class="menu-bullet me-0">
                                 </span>
-                                <span class="menu-title">Profil</span>
+                                <span class="menu-title">@Model.Email</span>
                             </a>
                         </div>
                        

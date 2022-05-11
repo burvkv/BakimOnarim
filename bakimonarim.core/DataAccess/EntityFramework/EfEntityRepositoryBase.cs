@@ -1,4 +1,5 @@
 ﻿using bakimonarim.core.Entity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -12,7 +13,7 @@ namespace bakimonarim.core.DataAccess.EntityFramework
 {
     public class EfEntityRepositoryBase<TEntity, TContext> : IEntityRepository<TEntity>
         where TEntity : class, IEntity, new()
-        where TContext : IdentityDbContext, new()
+        where TContext : DbContext, new()
     {
         public void Delete(TEntity entity)
         {
